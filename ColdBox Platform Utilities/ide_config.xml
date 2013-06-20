@@ -1,0 +1,329 @@
+<application>
+	<name>ColdBox Platform Utilities</name>
+	<author>Ortus Solutions, Corp</author>
+	<email>info@ortussolutions.com</email>	
+	<description><![CDATA[
+		A ColdFusion Builder companion to help build ColdBox Platform and ColdBox LITE Applications.	
+	]]></description>	
+	<version>3.0</version>
+	<license> Copyright since [2009] [Ortus Solutions, Corp - Luis Majano]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</license>
+ 
+	<!-- Menu Contributions -->
+	<menucontributions >
+
+		<contribution target="projectview">
+			<!--  ColdBox Platform Menu -->
+			<menu name="ColdBox Platform">
+				
+				<!-- Global Actions -->
+				<action name="New Application"	handlerid="GenSkeleton"		showResponse="true">
+					<filters>
+						<filter type="project" />
+						<filter type="folder" />
+					</filters>
+				</action>
+				<action name="New CRUD For Entity" 	handlerid="GenCrud"	showResponse="true">
+					<filters><filter type="file" /></filters>
+				</action>
+				<action name="New Handler" 		handlerid="GenHandler"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Interceptor" 	handlerid="GenInterceptor"	showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Model" 		handlerid="GenModel"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Module" 	handlerid="GenModule"	showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Plugin" 		handlerid="GenPlugin"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				
+				<!-- Testing -->
+				<menu name="Testing">
+					<action name="New Integration Test" 	handlerid="GenIntegrationTest"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Model Test" 			handlerid="GenModelTest"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Interceptor Test" 	handlerid="GenInterceptorTest"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Plugin Test" 			handlerid="GenPluginTest"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+				</menu>
+				
+				<!-- ORM -->
+				<menu name="ORM">
+					<action name="New ORM Entity" 	handlerid="GenORMEntity"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New ORM Event Handler" 	handlerid="GenORMEventHandler"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Virtual Entity Service" 	handlerid="GenVirtualEntityService"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Templated ORM Service" 	handlerid="GenTemplatedEntityService"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+				</menu>
+				
+				<!--Project Only Actions-->
+				<action name="Setup URL Rewrites" 	handlerid="GenRewrites"	showResponse="true">
+					<filters><filter type="project" /></filters>
+				</action>
+				<action name="Setup Project ColdBox Variable Mappings" 	handlerid="GenVariableMappings"	showResponse="true">
+					<filters><filter type="project" /></filters>
+				</action>
+				
+				<!-- Resources -->
+				<menu name="Debugger Monitors">
+					<filters><filter type="project" /></filters>
+					<action name="Profile Monitor" 		handlerid="DebuggerProfiler"	showResponse="true"></action>
+					<action name="CacheBox Monitor" 	handlerid="DebuggerCacheBox"	showResponse="true"></action>
+				</menu>
+				
+				<!-- Config Folder Aspects -->
+				<menu name="Setup Aspects">
+					<filters><filter type="folder" pattern="config" /></filters>
+					<action name="Setup Deploy Interceptor" 	handlerid="GenDeploy"	showResponse="true"></action>
+					<action name="Setup Security Interceptor" 	handlerid="GenSecurity"	showResponse="true"></action>
+				</menu>
+				
+				<!-- Divider -->
+				<action name="----------------------------------"></action>
+				
+				<!-- Resources -->
+				<menu name="Resources">
+					<action name="ColdBox Quick Docs" 	handlerid="ColdBoxQuickDocs"	showResponse="true"></action>
+					<action name="ColdBox Wiki Docs" 	handlerid="ColdBoxDocs"			showResponse="true"></action>
+					<action name="ColdBox Live Search" 	handlerid="ColdBoxSearch"		showResponse="true"></action>
+					<action name="ColdBox Live API" 	handlerid="ColdBoxAPI"			showResponse="true"></action>
+					<action name="Extension Help" 		handlerid="ExtensionHelp"		showResponse="true"></action>
+				</menu>
+				
+				<!--AutoUpdate -->
+				<action name="Check For Extension Updates..." 	handlerid="AutoUpdateCheck"	showResponse="true"></action>
+				
+				<!-- WireBox -->
+				<menu name="WireBox">
+					<action name="Convert ColdSpring To WireBox" 	handlerid="WireBoxCSToWireBox"	showResponse="true">
+						<filters><filter type="file" pattern=".*\.(xml\.cfm|xml)" /></filters>
+					</action>
+					<action name="Convert Legacy Model Mappings To WireBox" 	handlerid="WireBoxMMToWireBox"	showResponse="true">
+						<filters><filter type="file" pattern="modelMappings.cfm" /></filters>
+					</action>
+					<action name="New Binder" 		handlerid="WireBoxGenBinder"		showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New AOP Aspect" 		handlerid="wireBoxGenAspect"		showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+				</menu>
+			</menu>
+			
+			<!-- ColdBox LITE -->
+			<menu name="ColdBox LITE">
+				
+				<!-- Global Actions -->
+				<action name="New Application"	handlerid="GenSkeleton"		showResponse="true">
+					<filters>
+						<filter type="project" />
+						<filter type="folder" />
+					</filters>
+				</action>
+				<action name="New Handler" 		handlerid="GenHandler"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Model" 		handlerid="GenModel"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				
+				<!-- ORM -->
+				<menu name="ORM">
+					<action name="New ORM Entity" 	handlerid="GenORMEntity"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New ORM Event Handler" 	handlerid="GenORMEventHandler"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Virtual Entity Service" 	handlerid="GenVirtualEntityService"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Templated ORM Service" 	handlerid="GenTemplatedEntityService"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+				</menu>
+				
+				<!--Project Only Actions-->
+				<action name="Setup URL Rewrites" 	handlerid="GenRewrites"	showResponse="true">
+					<filters><filter type="project" /></filters>
+				</action>
+				<action name="Setup Project ColdBox LITE Variable Mappings" 	handlerid="GenLITEVariableMappings"	showResponse="true">
+					<filters><filter type="project" /></filters>
+				</action>
+				
+				<!-- Divider -->
+				<action name="----------------------------------"></action>
+				
+				<!-- Resources -->
+				<menu name="Resources">
+					<action name="ColdBox Quick Docs" 	handlerid="ColdBoxQuickDocs"	showResponse="true"></action>
+					<action name="ColdBox Wiki Docs" 	handlerid="ColdBoxDocs"			showResponse="true"></action>
+					<action name="ColdBox Live Search" 	handlerid="ColdBoxSearch"		showResponse="true"></action>
+					<action name="ColdBox Live API" 		handlerid="ColdBoxAPI"			showResponse="true"></action>
+					<action name="Extension Help" 		handlerid="ExtensionHelp"		showResponse="true"></action>
+				</menu>
+				
+				<!--AutoUpdate -->
+				<action name="Check For Extension Updates..." 	handlerid="AutoUpdateCheck"	showResponse="true"></action>
+				
+				<!-- WireBox -->
+				<menu name="WireBox">
+					<action name="Convert ColdSpring To WireBox" 	handlerid="WireBoxCSToWireBox"	showResponse="true">
+						<filters><filter type="file" pattern=".*\.(xml\.cfm|xml)" /></filters>
+					</action>
+					<action name="Convert Legacy Model Mappings To WireBox" 	handlerid="WireBoxMMToWireBox"	showResponse="true">
+						<filters><filter type="file" pattern="modelMappings.cfm" /></filters>
+					</action>
+					<action name="New Binder" 		handlerid="WireBoxGenBinder"		showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New AOP Aspect" 		handlerid="wireBoxGenAspect"		showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+				</menu>
+			</menu>
+			
+			<!-- ForgeBox Menu -->
+			<menu name="ForgeBox">
+				<filters>
+					<filter type="folder" />
+					<filter type="project" />
+				</filters>
+				
+				<!-- ForgeBox -->
+				<action name="Install Entry" 	handlerid="ForgeBoxInstallCategory"	showResponse="true"></action>
+			</menu>
+		</contribution>
+		
+		<!--  Editor  -->
+		<contribution target="editor">
+			<menu name="WireBox DI">
+				<action name="Property Injection" 	handlerid="WireBoxPropertyInjection"	showResponse="true"></action>
+				<action name="Setter Injection" 	handlerid="WireBoxSetterInjection"		showResponse="true"></action>
+				<action name="Provider Method" 		handlerid="WireBoxProviderMethod"		showResponse="true"></action>
+			</menu>
+			<menu name="ColdBox">
+				<action name="Generate Action" handlerid="GenAction" showResponse="true" />
+				<action name="Generate Implicit Handler Methods" handlerid="GenImplicitHandlerMethods" showResponse="true"></action>
+			</menu>
+		</contribution>
+		
+		<!--  Outline View -->
+		<contribution target="outlineview">
+			<menu name="ColdBox">
+				<action name="Generate Implicit Actions" handlerid="GenImplicitActions" showResponse="true">
+					<filters> 
+						<filter type="cffunction" />
+					</filters>
+				</action>
+			</menu>
+		</contribution>
+
+    </menucontributions>	
+
+	<!-- Project Creation Events -->
+	<events>
+		<event type="onprojectcreate" handlerid="GenSkeleton" />
+	</events>	
+	
+	<handlers>		
+		<!-- Global Generators -->
+		<handler id="GenHandler"			type="CFM" filename="HandlerSetup.cfm" />
+		<handler id="GenPlugin"				type="CFM" filename="PluginSetup.cfm" />
+		<handler id="GenSkeleton"			type="CFM" filename="AppSkeleton.cfm" />
+		<handler id="GenModel"	    		type="CFM" filename="ModelSetup.cfm" />
+		<handler id="GenInterceptor"		type="CFM" filename="InterceptorSetup.cfm" />
+		<handler id="GenModule"				type="CFM" filename="ModuleSetup.cfm" />
+		<handler id="GenCrud"				type="CFM" filename="CrudSetup.cfm" />
+		
+		<!-- Testing Generators -->
+		<handler id="GenIntegrationTest" 	type="CFM" filename="testing/IntegrationTestSetup.cfm" />
+		<handler id="GenModelTest"		 	type="CFM" filename="testing/ModelTestSetup.cfm" />
+		<handler id="GenInterceptorTest" 	type="CFM" filename="testing/InterceptorTestSetup.cfm" />
+		<handler id="GenPluginTest" 		type="CFM" filename="testing/PluginTestSetup.cfm" />
+		
+		<!-- Config Folder Aspects -->
+		<handler id="GenDeploy"	    		type="CFM" filename="DeploySetup.cfm" />
+		<handler id="GenSecurity"    		type="CFM" filename="SecuritySetup.cfm" />		
+				
+		<!-- Project Handlers -->
+		<handler id="GenRewrites"				type="CFM" filename="project/RewriteSetup.cfm" />
+		<handler id="GenVariableMappings"		type="CFM" filename="project/VariableMappings.cfm" />
+		<handler id="GenLITEVariableMappings"	type="CFM" filename="project/LITEVariableMappings.cfm" />
+		
+		<!-- Editor Handlers -->
+		<handler id="GenImplicitHandlerMethods"		type="CFM" filename="editor/ImplicitHandlerMethodsSetup.cfm" />
+		<handler id="GenAction"						type="CFM" filename="editor/ActionSetup.cfm" />
+		
+		<!-- Outline Handlers -->
+		<handler id="GenImplicitActions"		type="CFM" filename="outline/ImplicitActionsSetup.cfm" />
+		
+		<!-- ORM -->
+		<handler id="GenORMEntity" 				type="CFM" filename="orm/ORMEntitySetup.cfm" />
+		<handler id="GenORMEventHandler" 		type="CFM" filename="orm/ORMEventHandlerSetup.cfm" />
+		<handler id="GenVirtualEntityService" 	type="CFM" filename="orm/VirtualEntityServiceSetup.cfm" />
+		<handler id="GenTemplatedEntityService" type="CFM" filename="orm/TemplatedEntityServiceSetup.cfm" />
+		<handler id="GenTransfer"				type="CFM" filename="orm/TransferSetup.cfm" />
+		<handler id="GenReactor"				type="CFM" filename="orm/ReactorSetup.cfm" />
+		
+		<!-- AutoUpdate -->
+		<handler id="AutoUpdateCheck" type="CFM" filename="AutoUpdateCheck.cfm" />
+		
+		<!-- Resources -->
+		<handler id="ExtensionHelp" 	type="CFM" filename="resources/ExtensionHelp.cfm" />
+		<handler id="ColdBoxAPI" 		type="CFM" filename="resources/ColdBoxAPI.cfm" />
+		<handler id="ColdBoxQuickDocs" 	type="CFM" filename="resources/ColdBoxQuickDocs.cfm" />
+		<handler id="ColdBoxSearch"	 	type="CFM" filename="resources/ColdBoxSearch.cfm" />
+		<handler id="ColdBoxDocs" 		type="CFM" filename="resources/ColdBoxDocs.cfm" />
+		
+		<!-- Debugger -->
+		<handler id="DebuggerProfiler" 	type="CFM" filename="debugger/Profiler.cfm" />
+		<handler id="DebuggerCacheBox" 	type="CFM" filename="debugger/CacheBox.cfm" />
+		
+		<!-- ForgeBox -->
+		<handler id="ForgeBoxInstallCategory" 	type="CFM" filename="forgebox/ForgeBoxInstallCategory.cfm" />
+		
+		<!-- WireBox -->
+		<handler id="WireBoxPropertyInjection" 		type="CFM" filename="wirebox/WireBoxPropertyInjection.cfm" />
+		<handler id="WireBoxSetterInjection" 		type="CFM" filename="wirebox/WireBoxSetterInjection.cfm" />
+		<handler id="WireBoxComponentPersitence" 	type="CFM" filename="wirebox/WireBoxComponentPersitence.cfm" />
+		<handler id="WireBoxCSToWireBox" 			type="CFM" filename="wirebox/WireBoxCSToWireBox.cfm" />
+		<handler id="WireBoxMMToWireBox" 			type="CFM" filename="wirebox/WireBoxMMToWireBox.cfm" />
+		<handler id="WireBoxGenBinder" 				type="CFM" filename="wirebox/WireBoxGenBinder.cfm" />
+		<handler id="WireBoxProviderMethod" 		type="CFM" filename="wirebox/WireBoxProviderMethod.cfm" />
+		<handler id="wireBoxGenAspect" 				type="CFM" filename="wirebox/WireBoxGenAspect.cfm" />
+		
+		<!-- Views -->
+		<handler id="ViewApiDocs"  type="CFM" filename="views/APIDocs.cfm" />
+	</handlers>
+
+</application>
